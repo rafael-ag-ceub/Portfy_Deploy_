@@ -2,8 +2,6 @@
  
 Organizador de carreira com currículo, portfólio, projetos, agenda, notas e um Agente de IA.
  
-Projeto Integrador · CEUB · 2026 · versão 11
-
 ## Estrutura do projeto
  
 ```
