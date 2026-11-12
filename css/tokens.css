@@ -1,0 +1,177 @@
+/* =====================================================================
+   PORTFY · css/tokens.css
+   Camada: Design (a base de todo o visual)
+   Aqui ficam as decisões de marca: a tipografia própria, a escala, as
+   cores (claro e escuro), os raios, as sombras e o ritmo de espaçamento.
+   Para mudar a identidade inteira, altere os valores deste arquivo.
+   ===================================================================== */
+
+:root {
+  /* ---------- Tipografia própria do Portfy ----------
+     Título: Plus Jakarta Sans (pesos 600 a 800): geométrica, limpa e de cara de startup.
+     Texto: Inter (leitura em tela). Código e atalhos: JetBrains Mono. */
+  --f-display:
+    'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    Arial, sans-serif;
+  --f-text:
+    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* ---------- Escala tipográfica (proporção ~1,2) ---------- */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 15px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 28px;
+  --fs-3xl: 36px;
+  --fs-4xl: clamp(42px, 5.6vw, 66px);
+  --fs-5xl: clamp(48px, 7.6vw, 96px);
+  --lh-tight: 1.04;
+  --lh-snug: 1.25;
+  --lh-body: 1.55;
+  --track-display: -0.035em;
+  --track-title: -0.02em;
+  --track-eyebrow: 0.14em;
+
+  /* ---------- Cores (tema claro) ---------- */
+  --bg: #f3f6fc;
+  --surface: #ffffff;
+  --surface-2: #edf2fa;
+  --surface-3: #e2e9f5;
+  --ink: #0d1b3f;
+  --ink-2: #2d3f6e;
+  --ink-3: #56659a;
+  --ink-4: #8b98bc;
+  --line: #e1e8f4;
+  --line-2: #c9d4e8;
+  --brand: #2453d6;
+  --brand-600: #1b45bd;
+  --brand-ink: #1a3fa8;
+  --brand-soft: #e7efff;
+  --brand-soft-2: #d3e2ff;
+  --teal: #14a38b;
+  --teal-soft: #dcf5f1;
+  --coral: #f2643a;
+  --coral-soft: #fdebe3;
+  --gold: #d99100;
+  --gold-soft: #fff4d6;
+  --ok: #12a150;
+  --ok-bg: #ddf7e7;
+  --warn: #b56a00;
+  --warn-bg: #fef0c7;
+  --err: #d92d20;
+  --err-bg: #fee4e2;
+  --grad-brand: linear-gradient(135deg, #1a3fa8 0%, #2453d6 52%, #4c8cf5 100%);
+  --grad-soft: linear-gradient(160deg, #e7efff 0%, #eaf4ff 100%);
+  --grad-text: linear-gradient(100deg, #2453d6 10%, #4c8cf5 100%);
+  --overlay: rgba(9, 12, 24, 0.46);
+
+  /* ---------- Sombras ---------- */
+  --sh-1: 0 1px 2px rgba(12, 15, 29, 0.05);
+  --sh-2: 0 1px 3px rgba(12, 15, 29, 0.06), 0 12px 28px -16px rgba(12, 15, 29, 0.2);
+  --sh-3: 0 2px 8px rgba(12, 15, 29, 0.07), 0 30px 70px -30px rgba(12, 15, 29, 0.4);
+  --sh-brand: 0 12px 28px -12px rgba(36, 83, 214, 0.55);
+
+  /* ---------- Raios, espaços e movimento ---------- */
+  --r-1: 8px;
+  --r-2: 12px;
+  --r-3: 16px;
+  --r-4: 20px;
+  --r-5: 28px;
+  --r-pill: 999px;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 0.18s;
+  --hs: 1; /* escala das alças do editor (o JS ajusta pelo zoom) */
+  --sb-w: 260px;
+  --tb-h: 64px;
+  color-scheme: light;
+}
+
+/* Tema escuro: sistema (se a pessoa não escolheu) e escolha explícita */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #060b1a;
+    --surface: #0c1430;
+    --surface-2: #111b3c;
+    --surface-3: #18244b;
+    --ink: #eef3ff;
+    --ink-2: #c3ceeb;
+    --ink-3: #8794bd;
+    --ink-4: #5b6893;
+    --line: #1c2750;
+    --line-2: #2a3868;
+    --brand: #6c9bff;
+    --brand-600: #8db2ff;
+    --brand-ink: #b5ccff;
+    --brand-soft: #14244f;
+    --brand-soft-2: #1d3366;
+    --teal: #3cc9b2;
+    --teal-soft: #0f302d;
+    --coral: #ff8a5c;
+    --coral-soft: #3a2019;
+    --gold: #f5b83d;
+    --gold-soft: #3a2d12;
+    --ok: #4ade80;
+    --ok-bg: #0f2e1d;
+    --warn: #fbbf24;
+    --warn-bg: #3a2d0f;
+    --err: #ff7a6e;
+    --err-bg: #3a1816;
+    --grad-soft: linear-gradient(160deg, #13224d 0%, #0f2a3f 100%);
+    --overlay: rgba(2, 3, 8, 0.66);
+    --sh-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --sh-2: 0 1px 3px rgba(0, 0, 0, 0.4), 0 14px 30px -16px rgba(0, 0, 0, 0.7);
+    --sh-3: 0 2px 8px rgba(0, 0, 0, 0.5), 0 34px 80px -30px rgba(0, 0, 0, 0.9);
+    --sh-brand: 0 14px 34px -12px rgba(108, 155, 255, 0.5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #060b1a;
+  --surface: #0c1430;
+  --surface-2: #111b3c;
+  --surface-3: #18244b;
+  --ink: #eef3ff;
+  --ink-2: #c3ceeb;
+  --ink-3: #8794bd;
+  --ink-4: #5b6893;
+  --line: #1c2750;
+  --line-2: #2a3868;
+  --brand: #6c9bff;
+  --brand-600: #8db2ff;
+  --brand-ink: #b5ccff;
+  --brand-soft: #14244f;
+  --brand-soft-2: #1d3366;
+  --teal: #3cc9b2;
+  --teal-soft: #0f302d;
+  --coral: #ff8a5c;
+  --coral-soft: #3a2019;
+  --gold: #f5b83d;
+  --gold-soft: #3a2d12;
+  --ok: #4ade80;
+  --ok-bg: #0f2e1d;
+  --warn: #fbbf24;
+  --warn-bg: #3a2d0f;
+  --err: #ff7a6e;
+  --err-bg: #3a1816;
+  --grad-soft: linear-gradient(160deg, #13224d 0%, #0f2a3f 100%);
+  --overlay: rgba(2, 3, 8, 0.66);
+  --sh-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --sh-2: 0 1px 3px rgba(0, 0, 0, 0.4), 0 14px 30px -16px rgba(0, 0, 0, 0.7);
+  --sh-3: 0 2px 8px rgba(0, 0, 0, 0.5), 0 34px 80px -30px rgba(0, 0, 0, 0.9);
+  --sh-brand: 0 14px 34px -12px rgba(108, 155, 255, 0.5);
+  color-scheme: dark;
+}
