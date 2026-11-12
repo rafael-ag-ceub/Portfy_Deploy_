@@ -1,3 +1,9 @@
+----------------------------------------------------
+----------------RODANDO A QUERY 08------------------
+----------------------------------------------------
+
+
+
 -- =====================================================================
 -- PORTFY · Perfil completo + Pagamentos reais (Mercado Pago)
 -- Rode DEPOIS das migrações anteriores (SQL Editor > New query > Run).
